@@ -3,7 +3,6 @@ package common
 import (
 	"strings"
 
-	"github.com/micro/go-micro/v2/util/log"
 	uuid "github.com/satori/go.uuid"
 
 	"github.com/bigrocs/newpostech/config"
@@ -61,9 +60,9 @@ func (c *Common) Request(response *responses.CommonResponse) (err error) {
 		return err
 	}
 	params["sign"] = sign
-	log.Info("newpostech:PostJSON", c.APIBaseURL(), params)
+	// log.Info("newpostech:PostJSON", c.APIBaseURL(), params)
 	res, err := util.PostJSON(c.APIBaseURL(), params)
-	log.Info("newpostech:PostJSON:res", string(res), err)
+	// log.Info("newpostech:PostJSON:res", string(res), err)
 	if err != nil {
 		return err
 	}
